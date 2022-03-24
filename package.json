@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Kidha soneyoo\" && exit 1",
     "build": "webpack",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "transformjs": "babel src -d lib"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
     "babel-loader": "^8.2.4",

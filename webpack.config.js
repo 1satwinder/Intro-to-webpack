@@ -4,9 +4,9 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 module.exports = {
     mode: 'development',
-    entry: {
+    entry: { 
         bundle: path.resolve(__dirname, 'src/index.js')},
-    output: {
+    output: { 
         path : path.resolve(__dirname, 'dist'),
         filename: '[name][contenthash].js',
         assetModuleFilename: '[name][ext]',
@@ -47,6 +47,16 @@ module.exports = {
                test: /\.(png|svg|jpg|jpeg|gif)$/i,
                type: 'asset/resource'
            },
+           {
+            test: /\.m?js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: "babel-loader",
+              options: {
+                presets: ['@babel/preset-env']
+              }
+            }
+          },
        ]
     },
 
